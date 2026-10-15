@@ -1,0 +1,26 @@
+services:
+  shard1:
+    image: mysql:8.4
+    container_name: mysql-shard1
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: appdb
+    ports:
+      - "3308:3306"
+    volumes:
+      - shard1_data:/var/lib/mysql
+
+  shard2:
+    image: mysql:8.4
+    container_name: mysql-shard2
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: appdb
+    ports:
+      - "3309:3306"
+    volumes:
+      - shard2_data:/var/lib/mysql
+
+volumes:
+  shard1_data:
+  shard2_data:
