@@ -10,7 +10,7 @@ app.post("/publish", async (req, res) => {
     const channel = getChannel();
 
     channel.sendToQueue(
-      "tasks",
+      TASK_QUEUE_NAME,
       Buffer.from(JSON.stringify(req.body)),
       { persistent: true }
     );
@@ -27,7 +27,7 @@ app.post("/consume", async (req, res) => {
     const channel = getChannel();
     const message = await new Promise((resolve) => {
       channel.consume(
-        "tasks",
+        TASK_QUEUE_NAME,
         (msg) => {
           if (msg) {
             const data = JSON.parse(msg.content.toString());
@@ -52,10 +52,10 @@ app.get("/queue-length", async (req, res) => {
   try {
     const channel = getChannel();
 
-    const result = await channel.checkQueue("tasks");
+    const result = await channel.checkQueue(TASK_QUEUE_NAME);
 
     res.json({
-      queue: "tasks",
+      queue: TASK_QUEUE_NAME,
       messageCount: result.messageCount,
       consumerCount: result.consumerCount,
     });

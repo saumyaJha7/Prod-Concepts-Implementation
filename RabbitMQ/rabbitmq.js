@@ -1,4 +1,5 @@
 import amqp from "amqplib";
+import { TASK_QUEUE_NAME } from "./constants.js";
 
 let channel;
 
@@ -9,7 +10,7 @@ export async function connectRabbitMQ() {
 
   channel = await connection.createChannel();
 
-  await channel.assertQueue("tasks", {
+  await channel.assertQueue(TASK_QUEUE_NAME, {
     durable: true,
   });
 
