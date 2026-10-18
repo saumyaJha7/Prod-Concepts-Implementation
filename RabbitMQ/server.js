@@ -1,5 +1,6 @@
 import express from "express";
 import { connectRabbitMQ, getChannel } from "./rabbitmq.js";
+import {TASK_QUEUE_NAME} from "./constants.js";
 
 const app = express();
 app.use(express.json());
