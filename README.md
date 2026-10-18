@@ -22,7 +22,7 @@ These projects use [Bun](https://bun.sh) and [Docker Compose](https://docs.docke
 
 ```bash
 # Clone the repo
-git clone https://github.com/<your-username>/SD.git
+git clone https://github.com/saumyaJha7/SD.git
 cd SD
 
 # Run any project, e.g. the sharding demo
