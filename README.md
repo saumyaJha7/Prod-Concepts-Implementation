@@ -36,7 +36,7 @@ Check each project's README for its specific setup.
 
 ## Why I Built This
 
-System design interviews and blog posts teach the *theory*. This repo is where I turn that theory into working code: spinning up the infra, writing the queries, breaking things, and fixing them.
+System design interviews and blog posts teach the *theory* part. This repo is where I turn that theory into working code: spinning up the infra, writing the queries, breaking things, and fixing them.
 
 ## Roadmap
 
